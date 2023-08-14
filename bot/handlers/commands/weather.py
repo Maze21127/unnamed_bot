@@ -13,8 +13,9 @@ async def weather(message: types.Message):
     logger.info(f"{message.from_id} {message.text}")
     args = message.get_args()
     coords = get_city_coords(args)
+    city = args if args else "Владивосток"
     if coords:
         weather_data = await get_weather(coords)
-        return await message.answer(get_weather_message(weather_data, args))
+        return await message.answer(get_weather_message(weather_data, city))
     return await message.answer(CITY_NOT_FOUND)
 

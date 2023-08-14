@@ -47,3 +47,4 @@ async def get_weather(params: dict):
                 humidity=data['fact']['humidity']
             )
             return weather_data
+

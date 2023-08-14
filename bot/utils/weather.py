@@ -11,4 +11,4 @@ def _get_file_data() -> dict:
 
 def get_city_coords(city: str) -> dict | None:
     data = _get_file_data()
-    return data.get(city.capitalize(), None)
+    return data.get(city.capitalize(), data.get("Владивосток"))
