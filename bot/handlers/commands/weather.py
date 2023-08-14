@@ -8,7 +8,7 @@ from bot.utils.weather import get_city_coords
 from logger import logger
 
 
-@dp.message_handler(Command('weather'), chat_type=types.ChatType.SUPERGROUP)
+@dp.message_handler(Command('weather'), chat_type=[types.ChatType.SUPERGROUP, types.ChatType.GROUP])
 async def weather(message: types.Message):
     logger.info(f"{message.from_id} {message.text}")
     args = message.get_args()
