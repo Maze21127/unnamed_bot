@@ -7,7 +7,7 @@ from logger import logger
 
 
 @dp.message_handler(Command('me'), chat_type=types.ChatType.SUPERGROUP)
-async def start_user(message: types.Message):
+async def me_handler(message: types.Message):
     logger.info(f"{message.from_id} {message.text}")
     await message.answer(get_me_message(message), parse_mode=types.ParseMode.MARKDOWN_V2)
     try:
