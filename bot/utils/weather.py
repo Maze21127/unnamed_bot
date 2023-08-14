@@ -4,9 +4,9 @@ CITIES_FILENAME = "weather_cities.json"
 
 
 def _get_file_data() -> dict:
-    with open(CITIES_FILENAME, 'r') as file:
+    with open(CITIES_FILENAME, 'r', encoding='utf-8') as file:
         data = json.load(file)
-        return {key.capitalize():value for key, value in data.items()}
+        return {key.capitalize(): value for key, value in data.items()}
 
 
 def get_city_coords(city: str) -> dict | None:
